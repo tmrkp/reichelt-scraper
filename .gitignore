@@ -1,0 +1,11 @@
+node_modules/
+[0-9]*/
+*.csv
+
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+.Spotlight-V100
+.Trashes
