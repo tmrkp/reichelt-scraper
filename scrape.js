@@ -91,6 +91,9 @@ async function scrapeCategory(categoryId) {
         offsets.push(offset)
     }
 
+    let pages = offsets.length
+    let i = 0
+
     console.log(`Fetching remaining ${offsets.length} pages in parallel...`);
 
     let activeRequests = []
@@ -99,7 +102,8 @@ async function scrapeCategory(categoryId) {
             getData(categoryId, offset).then(async data => {
                 if (data) {
                     results.push(data.html)
-                    console.log(`Scraped: ${categoryId}-${offset}`)
+                    i++
+                    console.log(`Scraped page ${i}/${pages}`)
                 }
             })
         );
